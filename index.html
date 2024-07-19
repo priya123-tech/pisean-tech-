@@ -123,6 +123,9 @@
       .ab-sec-img {
         flex: 1;
         padding: 15px;
+        display: flex; /* Ensures the image is centered vertically */
+        align-items: center; /* Vertically center the image */
+        justify-content: center; /* Horizontally center the image */
       }
 
       .ab-sec-text h3 {
@@ -139,8 +142,9 @@
       .ab-sec-img img {
         width: 100%;
         height: auto;
+        max-width: 100%; /* Ensures the image does not exceed the container */
         border-radius: 5px;
-        object-fit: cover; /* Ensures the image covers the container */
+        object-fit: cover; /* Ensures the image covers the container without distortion */
       }
     }
 
@@ -187,6 +191,8 @@
     <div class="col-md-2 col-sm-2 col-xs-4"> <a class="btn-down" href="#">Download</a> </div> -->
   </div>
 </div>
+
+
 
 <!--Service-Section-Start-->
 <section id="service">
