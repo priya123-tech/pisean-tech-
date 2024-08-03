@@ -770,113 +770,199 @@
     </div>
   </div>
 </div>--> 
+ <style>
+        .faq {
+            min-height: 70vh;
+            width: 100vw;
+            text-align: center;
+            padding: 0 2rem;
+            background: url(../images/faq.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .faq .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensure responsiveness */
+            padding: 0 2rem;
+        }
+
+        .faq .row .accordion-container {
+            width: 100%;
+            max-width: 800px; /* Restrict max width for better readability */
+            text-align: left;
+        }
+
+        .faq .row .accordion {
+            margin: 1rem 0; /* Adjust margin for better spacing */
+        }
+
+        .faq .row .accordion-container .accordion .accordion-header {
+            background-color: #e73131;
+            margin: 1rem 0;
+            box-shadow: .1rem .1rem .3rem rgba(0, 0, 0, .3);
+            cursor: pointer;
+            padding: 0 1rem; /* Add padding for better touch targets */
+        }
+
+        .faq .row .accordion-container .accordion .accordion-header span {
+            display: inline-block;
+            text-align: center;
+            height: 4rem;
+            width: 5rem;
+            line-height: 4rem;
+            font-size: 2rem;
+            background: #333;
+            color: #fff;
+            clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        }
+
+        .faq .row .accordion-container .accordion .accordion-header h3 {
+            display: inline;
+            color: #fff;
+            font-weight: 400;
+            padding-left: .5rem;
+            font-size: 1.5rem;
+        }
+
+        .faq .row .accordion-container .accordion .accordion-body {
+            padding: 1rem;
+            color: #444;
+            box-shadow: .1rem .1rem .3rem rgba(0, 0, 0, .3);
+            background-color: #fff;
+            font-size: 1.3rem;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .faq .row .accordion-container {
+                width: 90%; /* Adjust width for smaller screens */
+            }
+            .faq .row .accordion-container .accordion .accordion-header span {
+                height: 3rem;
+                width: 3.5rem;
+                line-height: 3rem;
+                font-size: 1.5rem;
+            }
+            .faq .row .accordion-container .accordion .accordion-header h3 {
+                font-size: 1.2rem;
+            }
+            .faq .row .accordion-container .accordion .accordion-body {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Toggle FAQ answers
+            $('.accordion-header').click(function() {
+                $(this).toggleClass('active');
+                $(this).next('.accordion-body').slideToggle();
+            });
+        });
+    </script>
+</head>
+<body>
     <section class="faq">
-    <h1 class="heading" style="margin-top: -2rem; color: #e73131;" id="faq">FAQ</h1>
-    <div class="row">
-        <div class="accordion-container">
-            <div class="accordion">
-                <div class="accordion-header" id="q1">
-                    <span>+</span>
-                    <h3 class="question">Q: How does the AI self-checkout system work?</h3>
+        <h1 class="heading" style="margin-top: -2rem; color: #e73131;" id="faq">FAQ</h1>
+        <div class="row">
+            <div class="accordion-container">
+                <div class="accordion">
+                    <div class="accordion-header" id="q1">
+                        <span>+</span>
+                        <h3 class="question">Q: How does the AI self-checkout system work?</h3>
+                    </div>
+                    <div class="accordion-body" id="a1">
+                        <p>Our AI-powered self-checkout system utilizes an AI cart and implements a double verification system at the payment gateway to prevent theft. Customers scan items using the AI cart, and at the gateway, there's an additional verification step to ensure that all items have been properly scanned and paid for, enhancing security and reducing the risk of theft.</p>
+                    </div>
                 </div>
-                <div class="accordion-body" id="a1">
-                    <p>Our AI-powered self-checkout system utilizes an AI cart and implements a double verification system at the payment gateway to prevent theft. Customers scan items using the AI cart, and at the gateway, there's an additional verification step to ensure that all items have been properly scanned and paid for, enhancing security and reducing the risk of theft.</p>
+                <div class="accordion">
+                    <div class="accordion-header" id="q2">
+                        <span>+</span>
+                        <h3 class="question">Q: What payment methods do you accept?</h3>
+                    </div>
+                    <div class="accordion-body" id="a2">
+                        <p>We accept a variety of payment methods including credit cards, debit cards, mobile payments, and cash.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q2">
-                    <span>+</span>
-                    <h3 class="question">Q: What payment methods do you accept?</h3>
+                <div class="accordion">
+                    <div class="accordion-header" id="q3">
+                        <span>+</span>
+                        <h3 class="question">Q: Is the self-checkout system compatible with various types of products?</h3>
+                    </div>
+                    <div class="accordion-body" id="a3">
+                        <p>Our system is versatile and can be used for a wide range of products, including groceries, electronics, apparel, and more.</p>
+                    </div>
                 </div>
-                <div class="accordion-body" id="a2">
-                    <p>We accept a variety of payment methods including credit cards, debit cards, mobile payments, and cash.</p>
+                <div class="accordion">
+                    <div class="accordion-header" id="q4">
+                        <span>+</span>
+                        <h3 class="question">Q: Can the system handle promotional pricing and discounts?</h3>
+                    </div>
+                    <div class="accordion-body" id="a4">
+                        <p>Absolutely! Our self-checkout system is designed to accommodate promotional pricing, discounts, and loyalty programs, offering a flexible solution for your business needs.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q3">
-                    <span>+</span>
-                    <h3 class="question">Is the self-checkout system compatible with various types of products?</h3>
+                <div class="accordion">
+                    <div class="accordion-header" id="q5">
+                        <span>+</span>
+                        <h3 class="question">Q: How secure is the AI technology used in the system?</h3>
+                    </div>
+                    <div class="accordion-body" id="a5">
+                        <p>The AI technology employed in our system is highly secure, ensuring accurate product scanning and secure transactions, enhancing both customer and merchant confidence.</p>
+                    </div>
                 </div>
-                <div class="accordion-body" id="a3">
-                    <p>Our system is versatile and can be used for a wide range of products, including groceries, electronics, apparel, and more.</p>
+                <div class="accordion">
+                    <div class="accordion-header" id="q6">
+                        <span>+</span>
+                        <h3 class="question">Q: What is the pricing of your self-checkout system?</h3>
+                    </div>
+                    <div class="accordion-body" id="a6">
+                        <p>Through thorough market analysis, cost efficiency measures, and customer feedback, we maintain competitive and reasonable pricing for our products and services.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q4">
-                    <span>+</span>
-                    <h3 class="question">Can the system handle promotional pricing and discounts?</h3>
+                <div class="accordion">
+                    <div class="accordion-header" id="q7">
+                        <span>+</span>
+                        <h3 class="question">Q: What kind of support and training do you provide to shopping mall staff?</h3>
+                    </div>
+                    <div class="accordion-body" id="a7">
+                        <p>We offer comprehensive training for shopping mall staff to ensure smooth implementation. Ongoing support is also provided to address any queries or technical issues.</p>
+                    </div>
                 </div>
-                <div class="accordion-body" id="a4">
-                    <p>Absolutely! Our self-checkout system is designed to accommodate promotional pricing, discounts, and loyalty programs, offering a flexible solution for your business needs.</p>
+                <div class="accordion">
+                    <div class="accordion-header" id="q8">
+                        <span>+</span>
+                        <h3 class="question">Q: How does the system handle situations like product theft or malfunction?</h3>
+                    </div>
+                    <div class="accordion-body" id="a8">
+                        <p>Our system includes security measures to deter theft, and in case of malfunctions, we provide prompt technical support to address and resolve any issues.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q5">
-                    <span>+</span>
-                    <h3 class="question">How secure is the AI technology used in the system?</h3>
+                <div class="accordion">
+                    <div class="accordion-header" id="q9">
+                        <span>+</span>
+                        <h3 class="question">Q: What benefits can our shopping mall expect from implementing this self-checkout system?</h3>
+                    </div>
+                    <div class="accordion-body" id="a9">
+                        <p>Implementing our system can lead to reduced wait times, improved customer satisfaction, increased operational efficiency, and a modern, streamlined shopping experience.</p>
+                    </div>
                 </div>
-                <div class="accordion-body" id="a5">
-                    <p>The AI technology employed in our system is highly secure, ensuring accurate product scanning and secure transactions, enhancing both customer and merchant confidence.</p>
-                </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q6">
-                    <span>+</span>
-                    <h3 class="question">What is the pricing of your self-checkout system?</h3>
-                </div>
-                <div class="accordion-body" id="a6">
-                    <p>Through thorough market analysis, cost efficiency measures, and customer feedback, we maintain competitive and reasonable pricing for our products and services.</p>
-                </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q7">
-                    <span>+</span>
-                    <h3 class="question">What kind of support and training do you provide to shopping mall staff?</h3>
-                </div>
-                <div class="accordion-body" id="a7">
-                    <p>We offer comprehensive training for shopping mall staff to ensure smooth implementation. Ongoing support is also provided to address any queries or technical issues.</p>
-                </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q8">
-                    <span>+</span>
-                    <h3 class="question">How does the system handle situations like product theft or malfunction?</h3>
-                </div>
-                <div class="accordion-body" id="a8">
-                    <p>Our system includes security measures to deter theft, and in case of malfunctions, we provide prompt technical support to address and resolve any issues.</p>
-                </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q9">
-                    <span>+</span>
-                    <h3 class="question">What benefits can our shopping mall expect from implementing this self-checkout system?</h3>
-                </div>
-                <div class="accordion-body" id="a9">
-                    <p>Implementing our system can lead to reduced wait times, improved customer satisfaction, increased operational efficiency, and a modern, streamlined shopping experience.</p>
-                </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-header" id="q10">
-                    <span>+</span>
-                    <h3 class="question">How can shopping mall merchants get started with implementing the self-checkout system?</h3>
-                </div>
-                <div class="accordion-body" id="a10">
-                    <p>To get started with implementing the self-checkout system in your shopping mall, simply fill out the contact form on our website. Our team will reach out to schedule a demo video and guide you through the documentation formalities. Once completed, we'll proceed with the installation of the self-checkout system at your convenience.</p>
+                <div class="accordion">
+                    <div class="accordion-header" id="q10">
+                        <span>+</span>
+                        <h3 class="question">Q: How can shopping mall merchants get started with implementing the self-checkout system?</h3>
+                    </div>
+                    <div class="accordion-body" id="a10">
+                        <p>To get started with implementing the self-checkout system in your shopping mall, simply fill out the contact form on our website. Our team will reach out to schedule a demo video and guide you through the documentation formalities. Once completed, we'll proceed with the installation of the self-checkout system at your convenience.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Toggle FAQ answers
-        $('.accordion-header').click(function() {
-            $(this).toggleClass('active');
-            $(this).next('.accordion-body').slideToggle();
-        });
-    });
-</script>
+    </section>
 
 <!--Contact-Section-Start-->
 <section id="contact">
